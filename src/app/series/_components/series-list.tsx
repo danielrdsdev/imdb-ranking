@@ -37,9 +37,14 @@ export const SeriesList = async ({ query }: { query: string }) => {
 
 	return (
 		<div className="space-y-8">
-			{filteredData.map((item) => (
-				<MovieCard key={item.id} movie={item} />
-			))}
+			{filteredData.length > 0 ? (
+				filteredData.map((item) => <MovieCard key={item.id} movie={item} />)
+			) : (
+				<p className="text-muted-foreground font-medium text-center">
+					<span className="text-primary">{query}</span> não está entre os 100
+					melhores do IMDB.
+				</p>
+			)}
 		</div>
 	);
 };
