@@ -12,6 +12,7 @@ export const MobileNav = () => {
 			<PopoverTrigger asChild>
 				<Button size="icon" variant="ghost">
 					<Menu className="size-5" />
+					<span className="sr-only">Menu</span>
 				</Button>
 			</PopoverTrigger>
 			<PopoverContent className="flex flex-col items-center w-48 divide-y">

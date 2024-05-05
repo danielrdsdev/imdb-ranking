@@ -17,6 +17,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 				<Image
 					src={movie.image}
 					alt={movie.title}
+					priority
 					quality={100}
 					sizes="(max-width: 640px) 100vw, 192px"
 					placeholder="blur"
