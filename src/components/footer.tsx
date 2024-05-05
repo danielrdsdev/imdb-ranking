@@ -21,6 +21,7 @@ export const Footer = () => {
 					<Button asChild size="icon" variant="ghost">
 						<a href={link.href} target="_blank" rel="noreferrer noopener">
 							<link.icon className="size-5" />
+							<span className="sr-only">Social icon</span>
 						</a>
 					</Button>
 				))}
