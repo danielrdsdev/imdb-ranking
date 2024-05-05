@@ -13,13 +13,13 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 				{movie.rank}
 			</span>
 
-			<div className="relative w-full h-72 sm:size-48 rounded-xl overflow-hidden">
+			<div className="relative w-full h-72 sm:w-64 sm:h-72 rounded-xl overflow-hidden">
 				<Image
 					src={movie.image}
 					alt={movie.title}
 					priority
 					quality={100}
-					sizes="(max-width: 640px) 368px, 192px"
+					sizes="(max-width: 640px) 368px, 256px"
 					placeholder="blur"
 					blurDataURL={movie.thumbnail}
 					fill
@@ -35,7 +35,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 
 					<div>
 						<h2 className="text-lg font-semibold">{movie.title}</h2>
-						<p className="text-sm text-muted-foreground line-clamp-2">
+						<p className="text-sm text-muted-foreground line-clamp-3">
 							{movie.description}
 						</p>
 					</div>
