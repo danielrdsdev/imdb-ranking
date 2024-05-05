@@ -4,6 +4,7 @@ import { Header } from "@/components/header";
 import { Provider } from "@/components/provider";
 import { inter, titanOne } from "@/styles/font";
 import type { Metadata } from "next";
+import NextTopLoader from "nextjs-toploader";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${inter.variable} ${titanOne.variable}`}>
 				<Provider>
+					<NextTopLoader color="#FACC16" />
 					<Header />
 					<main className="flex-1 py-10 space-y-10 container">{children}</main>
 					<Footer />
