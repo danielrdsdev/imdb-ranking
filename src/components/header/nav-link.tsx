@@ -13,7 +13,7 @@ export const NavLink = (props: ComponentProps<typeof Link>) => {
 			{...props}
 			data-active={pathname === props.href}
 			className={cn(
-				"font-medium text-sm text-muted-foreground hover:text-primary transition-colors data-[active=true]:text-primary",
+				"font-medium text-sm text-muted-foreground hover:text-primary transition-colors data-[active=true]:text-primary data-[active=true]:font-semibold",
 			)}
 		/>
 	);

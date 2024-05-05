@@ -1,9 +1,9 @@
-import { Root2 } from "@/types";
+import { Props } from "@/types";
 import { Link, Star } from "lucide-react";
 import Image from "next/image";
 
 type MovieCardProps = {
-	movie: Root2;
+	movie: Props;
 };
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
