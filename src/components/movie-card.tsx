@@ -19,7 +19,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 					alt={movie.title}
 					priority
 					quality={100}
-					sizes="(max-width: 640px) 100vw, 192px"
+					sizes="(max-width: 640px) 368px, 192px"
 					placeholder="blur"
 					blurDataURL={movie.thumbnail}
 					fill
