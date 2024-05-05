@@ -19,7 +19,7 @@ export const Header = () => {
 					Ranking
 				</Link>
 
-				<div className="hidden lg:flex items-center gap-8">
+				<div className="hidden sm:flex items-center gap-8">
 					<nav className="flex items-center gap-6">
 						{navLinks.map((link) => (
 							<NavLink key={link.href} href={link.href}>
@@ -33,7 +33,7 @@ export const Header = () => {
 					<ModeToggle />
 				</div>
 
-				<div className="lg:hidden">
+				<div className="sm:hidden">
 					<MobileNav />
 				</div>
 			</div>
