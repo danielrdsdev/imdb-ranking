@@ -1,8 +1,8 @@
 "use client";
 import { MovieCard } from "@/components/movie-card";
-import { Button } from "@/components/ui/button";
+import { useInfiniteScroll } from "@/hooks/use-infinite-scroll";
 import { Props } from "@/types";
-import { useState } from "react";
+import { Loader } from "lucide-react";
 
 type MoviesListProps = {
 	query: string;
@@ -13,13 +13,7 @@ export const MoviesList = ({ query, data }: MoviesListProps) => {
 	if (!data) {
 		return null;
 	}
-
-	const [loadingMore, setLoadingMore] = useState(10);
-
-	const handleLoadMore = () => {
-		setLoadingMore((prev) => prev + 10);
-	};
-
+	const { loadingMore, isLoading } = useInfiniteScroll(data.length);
 	const filteredData = data.slice(0, loadingMore);
 
 	return (
@@ -32,10 +26,9 @@ export const MoviesList = ({ query, data }: MoviesListProps) => {
 					melhores do IMDB.
 				</p>
 			)}
-
-			{data.length > loadingMore && (
+			{isLoading && loadingMore < data.length && (
 				<div className="flex items-center justify-center">
-					<Button onClick={handleLoadMore}>Carregar mais</Button>
+					<Loader className="size-6 text-primary animate-spin" />
 				</div>
 			)}
 		</div>

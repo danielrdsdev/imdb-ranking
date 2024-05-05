@@ -1,5 +1,5 @@
+import { MoviesList } from "@/components/movies-list";
 import { Props } from "@/types";
-import { MoviesList } from "./movies-list";
 
 const getData = async (query: string): Promise<Props[] | undefined> => {
 	try {

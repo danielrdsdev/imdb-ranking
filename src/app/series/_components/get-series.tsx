@@ -1,5 +1,5 @@
+import { MoviesList } from "@/components/movies-list";
 import { Props } from "@/types";
-import { SeriesList } from "./series-list";
 
 const getData = async (query: string): Promise<Props[] | undefined> => {
 	try {
@@ -35,5 +35,5 @@ export const GetSeries = async ({ query }: { query: string }) => {
 		item.title.toLowerCase().includes(query.toLowerCase()),
 	);
 
-	return <SeriesList query={query} data={filteredData} />;
+	return <MoviesList query={query} data={filteredData} />;
 };
