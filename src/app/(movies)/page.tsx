@@ -1,10 +1,16 @@
-import { MoviesList } from "@/components/movies-list";
 import { MoviesListSkeleton } from "@/components/movies-list-skeleton";
 import { Search } from "@/components/search";
 import { Suspense } from "react";
+import { MoviesList } from "./_components/movies-list";
 
-export default function Home() {
-	const url = process.env.API_URL as string;
+export default function Home({
+	searchParams,
+}: {
+	searchParams?: {
+		query?: string;
+	};
+}) {
+	const query = searchParams?.query || "";
 
 	return (
 		<>
@@ -18,7 +24,7 @@ export default function Home() {
 			<Search />
 
 			<Suspense fallback={<MoviesListSkeleton />}>
-				<MoviesList url={url} />
+				<MoviesList query={query} />
 			</Suspense>
 		</>
 	);

@@ -1,7 +1,7 @@
-import { MoviesList } from "@/components/movies-list";
 import { MoviesListSkeleton } from "@/components/movies-list-skeleton";
 import { Search } from "@/components/search";
 import { Suspense } from "react";
+import { SeriesList } from "./_components/series-list";
 
 export const metadata = {
 	title: "Séries",
@@ -9,8 +9,14 @@ export const metadata = {
 		"Lista das 100 melhores séries de todos os tempos ranqueados pelo IMDB.",
 };
 
-export default function SeriesPage() {
-	const url = process.env.API_URL as string;
+export default function SeriesPage({
+	searchParams,
+}: {
+	searchParams?: {
+		query?: string;
+	};
+}) {
+	const query = searchParams?.query || "";
 
 	return (
 		<>
@@ -20,10 +26,11 @@ export default function SeriesPage() {
 					Lista das 100 melhores séries de todos os tempos ranqueados pelo IMDB.
 				</p>
 			</div>
+
 			<Search />
 
 			<Suspense fallback={<MoviesListSkeleton />}>
-				<MoviesList url={`${url}/series`} />
+				<SeriesList query={query} />
 			</Suspense>
 		</>
 	);
