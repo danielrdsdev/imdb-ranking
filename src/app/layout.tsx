@@ -6,7 +6,10 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-	title: "IMDB Ranking",
+	title: {
+		default: "IMDB Ranking",
+		template: "%s | IMDB Ranking",
+	},
 	description:
 		"Uma aplicação Next.js que exibe o ranking dos filmes no IMDB. Os dados são atualizados em tempo real e são gerados por esta aplicação.",
 };
