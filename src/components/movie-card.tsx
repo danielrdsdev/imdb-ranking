@@ -8,21 +8,21 @@ type MovieCardProps = {
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
 	return (
-		<div className="relative rounded-xl border bg-muted shadow-lg dark:bg-muted/50 backdrop-blur-sm flex items-center gap-4 p-6">
+		<div className="relative rounded-xl border bg-muted shadow-lg dark:bg-muted/50 backdrop-blur-sm flex flex-col lg:flex-row items-center gap-4 p-6">
 			<span className="absolute -top-3 -left-3 bg-primary text-primary-foreground text-sm font-semibold size-8 flex items-center justify-center rounded-full">
 				{movie.rank}
 			</span>
 
-			<div className="relative size-48 rounded-xl overflow-hidden">
+			<div className="relative w-full h-72 lg:size-48 rounded-xl overflow-hidden">
 				<Image
 					src={movie.image}
 					alt={movie.title}
 					quality={100}
-					sizes="192px"
+					sizes="(max-width: 640px) 100vw, 192px"
 					placeholder="blur"
 					blurDataURL={movie.thumbnail}
 					fill
-					className="object-cover aspect-square"
+					className="object-cover aspect-square object-center"
 				/>
 			</div>
 

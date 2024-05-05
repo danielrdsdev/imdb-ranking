@@ -21,7 +21,7 @@ export default function RootLayout({
 			<body className={`${inter.variable} ${titanOne.variable}`}>
 				<Provider>
 					<Header />
-					<main className="flex-1 container">{children}</main>
+					<main className="flex-1 py-10 space-y-10 container">{children}</main>
 					<Footer />
 				</Provider>
 			</body>

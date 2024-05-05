@@ -7,7 +7,7 @@ export default function Home() {
 	const url = process.env.API_URL as string;
 
 	return (
-		<div className="space-y-8 py-16 w-full">
+		<>
 			<div className="space-y-2">
 				<h1 className="text-3xl font-semibold tracking-tight">Top 100</h1>
 				<p className="text-sm text-muted-foreground">
@@ -20,6 +20,6 @@ export default function Home() {
 			<Suspense fallback={<MoviesListSkeleton />}>
 				<MoviesList url={url} />
 			</Suspense>
-		</div>
+		</>
 	);
 }
