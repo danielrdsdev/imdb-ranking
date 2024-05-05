@@ -14,9 +14,8 @@ export default function Home() {
 					Lista dos 100 melhores filmes de todos os tempos ranqueados pelo IMDB.
 				</p>
 			</div>
-			<Suspense>
-				<Search />
-			</Suspense>
+
+			<Search />
 
 			<Suspense fallback={<MoviesListSkeleton />}>
 				<MoviesList url={url} />

@@ -14,9 +14,7 @@ export default function SeriesPage() {
 					Lista das 100 melhores séries de todos os tempos ranqueados pelo IMDB.
 				</p>
 			</div>
-			<Suspense>
-				<Search />
-			</Suspense>
+			<Search />
 
 			<Suspense fallback={<MoviesListSkeleton />}>
 				<MoviesList url={`${url}/series`} />
