@@ -7,6 +7,7 @@ import { Input } from "./ui/input";
 
 export const Search = ({ placeholder }: { placeholder: string }) => {
 	const searchParams = useSearchParams();
+	const search = searchParams.get("query")?.toString();
 	const pathname = usePathname();
 	const { replace } = useRouter();
 
@@ -28,7 +29,7 @@ export const Search = ({ placeholder }: { placeholder: string }) => {
 				onChange={(e) => {
 					handleSearch(e.target.value);
 				}}
-				defaultValue={searchParams.get("query")?.toString()}
+				defaultValue={search}
 				className="pl-10"
 			/>
 		</div>
