@@ -9,7 +9,7 @@ export default function SeriesPage() {
 	return (
 		<div className="space-y-8 py-16 w-full">
 			<div className="space-y-2">
-				<h2 className="text-3xl font-semibold tracking-tight">Top 100</h2>
+				<h1 className="text-3xl font-semibold tracking-tight">Top 100</h1>
 				<p className="text-sm text-muted-foreground">
 					Lista das 100 melhores séries de todos os tempos ranqueados pelo IMDB.
 				</p>

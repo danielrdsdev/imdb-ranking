@@ -1,9 +1,9 @@
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Provider } from "@/components/provider";
 import { inter, titanOne } from "@/styles/font";
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
 	title: "IMDB Ranking",
@@ -17,7 +17,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body className={`${inter.variable} ${titanOne.variable}`}>
 				<Provider>
 					<Header />

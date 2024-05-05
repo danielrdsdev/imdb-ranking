@@ -8,7 +8,7 @@ type MovieCardProps = {
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
 	return (
-		<div className="relative rounded-xl border bg-muted/40 backdrop-blur-sm flex items-center gap-4 p-6">
+		<div className="relative rounded-xl border bg-muted shadow-lg dark:bg-muted/50 backdrop-blur-sm flex items-center gap-4 p-6">
 			<span className="absolute -top-3 -left-3 bg-primary text-primary-foreground text-sm font-semibold size-8 flex items-center justify-center rounded-full">
 				{movie.rank}
 			</span>
