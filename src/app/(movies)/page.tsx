@@ -23,7 +23,7 @@ export default function Home({
 			</div>
 
 			<Suspense fallback={<SearchSkeleton />}>
-				<Search />
+				<Search placeholder="Digite seu filme favorito" />
 			</Suspense>
 
 			<Suspense fallback={<MoviesListSkeleton />}>

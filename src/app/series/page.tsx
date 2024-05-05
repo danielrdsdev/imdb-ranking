@@ -29,7 +29,7 @@ export default function SeriesPage({
 			</div>
 
 			<Suspense fallback={<SearchSkeleton />}>
-				<Search />
+				<Search placeholder="Digite sua série favorita" />
 			</Suspense>
 
 			<Suspense fallback={<MoviesListSkeleton />}>

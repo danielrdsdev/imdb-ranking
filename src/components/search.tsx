@@ -5,7 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 import { Input } from "./ui/input";
 
-export const Search = () => {
+export const Search = ({ placeholder }: { placeholder: string }) => {
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
 	const { replace } = useRouter();
@@ -24,7 +24,7 @@ export const Search = () => {
 		<div className="relative flex items-center">
 			<SearchIcon className="size-4 absolute left-4" />
 			<Input
-				placeholder="Digite seu filme favorito"
+				placeholder={placeholder}
 				onChange={(e) => {
 					handleSearch(e.target.value);
 				}}
