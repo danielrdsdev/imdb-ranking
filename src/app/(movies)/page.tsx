@@ -2,7 +2,7 @@ import { MoviesListSkeleton } from "@/components/movies-list-skeleton";
 import { Search } from "@/components/search";
 import { SearchSkeleton } from "@/components/search-skeleton";
 import { Suspense } from "react";
-import { MoviesList } from "./_components/movies-list";
+import { GetMovies } from "./_components/get-movies";
 
 export default function Home({
 	searchParams,
@@ -27,7 +27,7 @@ export default function Home({
 			</Suspense>
 
 			<Suspense fallback={<MoviesListSkeleton />}>
-				<MoviesList query={query} />
+				<GetMovies query={query} />
 			</Suspense>
 		</>
 	);

@@ -1,49 +1,42 @@
+"use client";
 import { MovieCard } from "@/components/movie-card";
+import { Button } from "@/components/ui/button";
 import { Props } from "@/types";
+import { useState } from "react";
 
-const getData = async (query: string): Promise<Props[] | undefined> => {
-	try {
-		const res = await fetch(`${process.env.API_URL}/series?query=${query}`, {
-			method: "GET",
-			headers: {
-				"X-RapidAPI-Key": process.env.API_KEY as string,
-				"X-RapidAPI-Host": process.env.API_HOST as string,
-			},
-			next: {
-				revalidate: 60 * 60 * 24, // 24 hours
-			},
-		});
-
-		if (!res.ok) {
-			throw new Error(`HTTP error! status: ${res.status}`);
-		}
-
-		return res.json();
-	} catch (error) {
-		console.log(error);
-	}
+type SeriesListProps = {
+	query: string;
+	data: Props[] | undefined;
 };
 
-export const SeriesList = async ({ query }: { query: string }) => {
-	const data = await getData(query);
-
+export const SeriesList = ({ query, data }: SeriesListProps) => {
 	if (!data) {
 		return null;
 	}
 
-	const filteredData = data.filter((item) =>
-		item.title.toLowerCase().includes(query.toLowerCase()),
-	);
+	const [loadingMore, setLoadingMore] = useState(10);
+
+	const handleLoadMore = () => {
+		setLoadingMore((prev) => prev + 10);
+	};
+
+	const filteredData = data.slice(0, loadingMore);
 
 	return (
 		<div className="space-y-8">
-			{filteredData.length > 0 ? (
+			{data.length > 0 ? (
 				filteredData.map((item) => <MovieCard key={item.id} movie={item} />)
 			) : (
 				<p className="text-muted-foreground font-medium text-center">
 					<span className="text-primary">{query}</span> não está entre os 100
 					melhores do IMDB.
 				</p>
+			)}
+
+			{data.length > loadingMore && (
+				<div className="flex items-center justify-center">
+					<Button onClick={handleLoadMore}>Carregar mais</Button>
+				</div>
 			)}
 		</div>
 	);

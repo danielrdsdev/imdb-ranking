@@ -2,7 +2,7 @@ import { MoviesListSkeleton } from "@/components/movies-list-skeleton";
 import { Search } from "@/components/search";
 import { SearchSkeleton } from "@/components/search-skeleton";
 import { Suspense } from "react";
-import { SeriesList } from "./_components/series-list";
+import { GetSeries } from "./_components/get-series";
 
 export const metadata = {
 	title: "Séries",
@@ -33,7 +33,7 @@ export default function SeriesPage({
 			</Suspense>
 
 			<Suspense fallback={<MoviesListSkeleton />}>
-				<SeriesList query={query} />
+				<GetSeries query={query} />
 			</Suspense>
 		</>
 	);
