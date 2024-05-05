@@ -1,3 +1,4 @@
+import { BackToTop } from "@/components/back-to-top";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Provider } from "@/components/provider";
@@ -26,6 +27,8 @@ export default function RootLayout({
 					<Header />
 					<main className="flex-1 py-10 space-y-10 container">{children}</main>
 					<Footer />
+
+					<BackToTop />
 				</Provider>
 			</body>
 		</html>
