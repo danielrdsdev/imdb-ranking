@@ -1,5 +1,6 @@
 import { MoviesListSkeleton } from "@/components/movies-list-skeleton";
 import { Search } from "@/components/search";
+import { SearchSkeleton } from "@/components/search-skeleton";
 import { Suspense } from "react";
 import { MoviesList } from "./_components/movies-list";
 
@@ -21,7 +22,9 @@ export default function Home({
 				</p>
 			</div>
 
-			<Search />
+			<Suspense fallback={<SearchSkeleton />}>
+				<Search />
+			</Suspense>
 
 			<Suspense fallback={<MoviesListSkeleton />}>
 				<MoviesList query={query} />

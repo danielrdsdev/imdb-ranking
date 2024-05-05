@@ -31,9 +31,13 @@ export const SeriesList = async ({ query }: { query: string }) => {
 		return null;
 	}
 
+	const filteredData = data.filter((item) =>
+		item.title.toLowerCase().includes(query.toLowerCase()),
+	);
+
 	return (
 		<div className="space-y-8">
-			{data.map((item) => (
+			{filteredData.map((item) => (
 				<MovieCard key={item.id} movie={item} />
 			))}
 		</div>
