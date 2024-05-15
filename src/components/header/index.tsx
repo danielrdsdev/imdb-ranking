@@ -1,5 +1,5 @@
 import { navLinks } from "@/config/nav";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Separator } from "../ui/separator";
 import { MobileNav } from "./mobile-nav";
 import { ModeToggle } from "./mode-toggle";

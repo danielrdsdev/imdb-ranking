@@ -4,6 +4,7 @@ import { Header } from "@/components/header";
 import { Provider } from "@/components/provider";
 import { inter, titanOne } from "@/styles/font";
 import type { Metadata } from "next";
+import { ViewTransitions } from "next-view-transitions";
 import NextTopLoader from "nextjs-toploader";
 import "../styles/globals.css";
 
@@ -22,17 +23,21 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<body className={`${inter.variable} ${titanOne.variable}`}>
-				<Provider>
-					<NextTopLoader color="#FACC16" />
-					<Header />
-					<main className="flex-1 py-10 space-y-10 container">{children}</main>
-					<Footer />
+		<ViewTransitions>
+			<html lang="en" suppressHydrationWarning>
+				<body className={`${inter.variable} ${titanOne.variable}`}>
+					<Provider>
+						<NextTopLoader color="#FACC16" />
+						<Header />
+						<main className="flex-1 py-10 space-y-10 container">
+							{children}
+						</main>
+						<Footer />
 
-					<BackToTop />
-				</Provider>
-			</body>
-		</html>
+						<BackToTop />
+					</Provider>
+				</body>
+			</html>
+		</ViewTransitions>
 	);
 }
