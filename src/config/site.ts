@@ -34,6 +34,7 @@ export const siteConfig: SiteConfig = {
 		openGraph: {
 			siteName,
 			title: siteName,
+			url: siteUrl
 		},
 	},
 	navLinks: [
