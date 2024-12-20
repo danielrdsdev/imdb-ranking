@@ -1,0 +1,59 @@
+import { siteUrl } from '@/lib/env'
+import { Github, Linkedin, LucideIcon } from 'lucide-react'
+import { Metadata } from 'next'
+
+type NavLink = {
+	href: string
+	label: string
+}
+
+type SocialLink = {
+	href: string
+	icon: LucideIcon
+}
+
+type SiteConfig = {
+	metadata: Metadata
+	navLinks: NavLink[]
+	socialLinks: SocialLink[]
+}
+
+const siteName = 'IMDB Ranking'
+
+export const siteConfig: SiteConfig = {
+	metadata: {
+		title: {
+			default: siteName,
+			template: `%s | ${siteName}`,
+		},
+		description:
+			'Uma aplicação Next.js que exibe o ranking dos filmes no IMDB. Os dados são atualizados em tempo real e são gerados por esta aplicação.',
+		authors: [{ name: siteName, url: siteUrl }],
+		creator: siteName,
+		publisher: siteName,
+		openGraph: {
+			siteName,
+			title: siteName,
+		},
+	},
+	navLinks: [
+		{
+			href: '/',
+			label: 'Filmes',
+		},
+		{
+			href: '/series',
+			label: 'Séries',
+		},
+	],
+	socialLinks: [
+		{
+			href: 'https://github.com/danielrdsdev',
+			icon: Github,
+		},
+		{
+			href: 'https://www.linkedin.com/in/danielrdsdev/',
+			icon: Linkedin,
+		},
+	],
+}

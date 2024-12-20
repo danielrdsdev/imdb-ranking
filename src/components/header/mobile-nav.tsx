@@ -1,10 +1,9 @@
-"use client";
-import { navLinks } from "@/config/nav";
-import { PopoverClose } from "@radix-ui/react-popover";
-import { Menu } from "lucide-react";
-import { Button } from "../ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { NavLink } from "./nav-link";
+import { siteConfig } from '@/config/site'
+import { PopoverClose } from '@radix-ui/react-popover'
+import { Menu } from 'lucide-react'
+import { Button } from '../ui/button'
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
+import { NavLink } from './nav-link'
 
 export const MobileNav = () => {
 	return (
@@ -15,15 +14,15 @@ export const MobileNav = () => {
 					<span className="sr-only">Menu</span>
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent className="flex flex-col items-center w-48 divide-y">
-				{navLinks.map((link) => (
+			<PopoverContent className="flex flex-col items-center divide-y w-48">
+				{siteConfig.navLinks.map((link) => (
 					<PopoverClose key={link.href} asChild>
-						<NavLink href={link.href} className="w-full py-3 text-center">
+						<NavLink href={link.href} className="py-3 w-full text-center">
 							{link.label}
 						</NavLink>
 					</PopoverClose>
 				))}
 			</PopoverContent>
 		</Popover>
-	);
-};
+	)
+}

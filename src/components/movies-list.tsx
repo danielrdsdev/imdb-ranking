@@ -1,20 +1,20 @@
-"use client";
-import { MovieCard } from "@/components/movie-card";
-import { useInfiniteScroll } from "@/hooks/use-infinite-scroll";
-import { Props } from "@/types";
-import { Loader } from "lucide-react";
+'use client'
+import { MovieCard } from '@/components/movie-card'
+import { useInfiniteScroll } from '@/hooks/use-infinite-scroll'
+import { Props } from '@/types'
+import { Loader } from 'lucide-react'
 
 type MoviesListProps = {
-	query: string;
-	data: Props[] | undefined;
-};
+	query: string
+	data: Props[] | undefined
+}
 
 export const MoviesList = ({ query, data }: MoviesListProps) => {
 	if (!data) {
-		return null;
+		return null
 	}
-	const { loadingMore, isLoading } = useInfiniteScroll(data.length);
-	const filteredData = data.slice(0, loadingMore);
+	const { loadingMore, isLoading } = useInfiniteScroll(data.length)
+	const filteredData = data.slice(0, loadingMore)
 
 	return (
 		<div className="space-y-8">
@@ -32,5 +32,5 @@ export const MoviesList = ({ query, data }: MoviesListProps) => {
 				</div>
 			)}
 		</div>
-	);
-};
+	)
+}

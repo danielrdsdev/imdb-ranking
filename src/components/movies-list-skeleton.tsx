@@ -1,4 +1,4 @@
-import { Skeleton } from "./ui/skeleton";
+import { Skeleton } from './ui/skeleton'
 
 export const MoviesListSkeleton = () => {
 	return (
@@ -7,5 +7,5 @@ export const MoviesListSkeleton = () => {
 				<Skeleton key={`${index + 1}`} className="h-[21.10rem] w-full" />
 			))}
 		</div>
-	);
-};
+	)
+}

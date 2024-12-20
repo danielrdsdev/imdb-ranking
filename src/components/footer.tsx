@@ -1,24 +1,24 @@
-import { socialLinks } from "@/config/nav";
-import { Button } from "./ui/button";
+import { siteConfig } from '@/config/site'
+import { Button } from './ui/button'
 
 export const Footer = () => {
 	return (
-		<footer className="py-6 flex flex-col gap-4 items-center justify-center">
+		<footer className="flex flex-col justify-center items-center gap-4 py-6">
 			<p className="text-muted-foreground text-sm">
-				Made by{" "}
+				Made by{' '}
 				<a
 					href="https://danielrds.dev"
 					target="_blank"
 					rel="noreferrer noopener"
-					className="text-primary font-medium hover:underline underline-offset-2"
+					className="font-medium text-primary underline-offset-2 hover:underline"
 				>
 					Daniel Rodrigues
 				</a>
 			</p>
 
 			<div className="flex items-center gap-2">
-				{socialLinks.map((link) => (
-					<Button asChild size="icon" variant="ghost">
+				{siteConfig.socialLinks.map((link) => (
+					<Button key={link.href} asChild size="icon" variant="ghost">
 						<a href={link.href} target="_blank" rel="noreferrer noopener">
 							<link.icon className="size-5" />
 							<span className="sr-only">Social icon</span>
@@ -27,5 +27,5 @@ export const Footer = () => {
 				))}
 			</div>
 		</footer>
-	);
-};
+	)
+}

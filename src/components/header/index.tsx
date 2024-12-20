@@ -1,27 +1,27 @@
-import { navLinks } from "@/config/nav";
-import { Link } from "next-view-transitions";
-import { Separator } from "../ui/separator";
-import { MobileNav } from "./mobile-nav";
-import { ModeToggle } from "./mode-toggle";
-import { NavLink } from "./nav-link";
+import { siteConfig } from '@/config/site'
+import { Link } from 'next-view-transitions'
+import { Separator } from '../ui/separator'
+import { MobileNav } from './mobile-nav'
+import { ModeToggle } from './mode-toggle'
+import { NavLink } from './nav-link'
 
 export const Header = () => {
 	return (
-		<header className="h-20 border-b">
-			<div className="flex items-center justify-between container h-full">
+		<header className="border-b h-20">
+			<div className="flex justify-between items-center h-full container">
 				<Link
 					href="/"
-					className="text-lg font-titanOne inline-flex items-center gap-2"
+					className="inline-flex items-center gap-2 font-titanOne text-lg"
 				>
-					<span className="bg-primary text-xl px-2 py-1 rounded-md text-primary-foreground">
+					<span className="bg-primary px-2 py-1 rounded-md text-primary-foreground text-xl">
 						IMDB
-					</span>{" "}
+					</span>{' '}
 					Ranking
 				</Link>
 
-				<div className="hidden sm:flex items-center gap-8">
+				<div className="sm:flex items-center gap-8 hidden">
 					<nav className="flex items-center gap-6">
-						{navLinks.map((link) => (
+						{siteConfig.navLinks.map((link) => (
 							<NavLink key={link.href} href={link.href}>
 								{link.label}
 							</NavLink>
@@ -38,5 +38,5 @@ export const Header = () => {
 				</div>
 			</div>
 		</header>
-	);
-};
+	)
+}
