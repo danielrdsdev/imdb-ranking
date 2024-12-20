@@ -1,8 +1,9 @@
 import { Props } from '@/types'
+import { DialogDescription, DialogTitle } from '@radix-ui/react-dialog'
 import { Link, Star } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Dialog, DialogContent } from './ui/dialog'
+import { Dialog, DialogContent, DialogHeader } from './ui/dialog'
 
 type MovieCardProps = {
 	movie: Props
@@ -24,7 +25,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 
 				<button
 					type="button"
-					className="relative bg-background rounded-xl focus:ring-2 focus:ring-primary focus:ring-offset-2 w-full sm:w-64 h-72 sm:h-72 transition-shadow duration-300 cursor-crosshair overflow-hidden focus:outline-none group"
+					className="relative bg-background rounded-xl focus:ring-2 focus:ring-primary focus:ring-offset-2 w-full sm:w-64 h-72 sm:h-72 transition-shadow duration-300 cursor-pointer overflow-hidden focus:outline-none group"
 					onClick={handleDialogClick}
 				>
 					<Image
@@ -73,6 +74,14 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 			</div>
 
 			<Dialog open={isOpen} onOpenChange={setIsOpen}>
+				<DialogHeader className='sr-only'>
+					<DialogTitle>Imagem do filme
+						{movie.title}
+					</DialogTitle>
+					<DialogDescription>
+						Imagem em alta resolução do filme {movie.title}
+					</DialogDescription>
+				</DialogHeader>
 				<DialogContent className="flex justify-center items-center bg-background/60 backdrop-blur p-0 max-w-2xl">
 					<div className="relative rounded-sm overflow-hidden">
 						<Image
