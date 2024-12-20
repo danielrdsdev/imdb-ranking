@@ -4,12 +4,6 @@ import { SearchSkeleton } from '@/components/search-skeleton'
 import { Suspense } from 'react'
 import { GetMovies } from './_components/get-movies'
 
-export const metadata = {
-	title: 'Filmes',
-	description:
-		'Lista dos 100 melhores filmes de todos os tempos ranqueados pelo IMDB.',
-}
-
 export default async function Home(props: {searchParams: Promise<{query: string}>}) {
 	const searchParams = await props.searchParams
 	const query = searchParams.query || ''
