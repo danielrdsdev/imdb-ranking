@@ -1,23 +1,22 @@
 'use client'
 
-import { useSearch } from '@/hooks/use-search'
 import { SearchIcon } from 'lucide-react'
+import Form from 'next/form'
+import { usePathname } from 'next/navigation'
+import { Button } from './ui/button'
 import { Input } from './ui/input'
 
 export const Search = ({ placeholder }: { placeholder: string }) => {
-	const { search, handleSearch } = useSearch()
+	const pathname = usePathname()
 
 	return (
-		<div className="relative flex items-center">
-			<SearchIcon className="left-4 absolute size-4" />
-			<Input
-				placeholder={placeholder}
-				onChange={(e) => {
-					handleSearch(e.target.value)
-				}}
-				defaultValue={search}
-				className="pl-10"
-			/>
-		</div>
+		<Form action={pathname} className="flex items-center gap-2 w-full">
+			<div className="relative flex flex-1 items-center">
+				<SearchIcon className="left-4 absolute size-4" />
+				<Input name="query" placeholder={placeholder} className="pl-10" />
+			</div>
+
+			<Button type="submit">Pesquisar</Button>
+		</Form>
 	)
 }

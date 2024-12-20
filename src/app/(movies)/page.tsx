@@ -1,10 +1,11 @@
 import { MoviesListSkeleton } from '@/components/movies-list-skeleton'
 import { Search } from '@/components/search'
-import { SearchSkeleton } from '@/components/search-skeleton'
 import { Suspense } from 'react'
 import { GetMovies } from './_components/get-movies'
 
-export default async function Home(props: {searchParams: Promise<{query: string}>}) {
+export default async function Home(props: {
+	searchParams: Promise<{ query: string }>
+}) {
 	const searchParams = await props.searchParams
 	const query = searchParams.query || ''
 
@@ -17,9 +18,7 @@ export default async function Home(props: {searchParams: Promise<{query: string}
 				</p>
 			</div>
 
-			<Suspense fallback={<SearchSkeleton />}>
-				<Search placeholder="Digite seu filme favorito" />
-			</Suspense>
+			<Search placeholder="Digite seu filme favorito" />
 
 			<Suspense fallback={<MoviesListSkeleton />}>
 				<GetMovies query={query} />

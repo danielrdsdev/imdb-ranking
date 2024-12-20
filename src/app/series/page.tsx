@@ -1,6 +1,5 @@
 import { MoviesListSkeleton } from '@/components/movies-list-skeleton'
 import { Search } from '@/components/search'
-import { SearchSkeleton } from '@/components/search-skeleton'
 import { Suspense } from 'react'
 import { GetSeries } from './_components/get-series'
 
@@ -10,7 +9,9 @@ export const metadata = {
 		'Lista das 100 melhores séries de todos os tempos ranqueados pelo IMDB.',
 }
 
-export default async function SeriesPage(props: {searchParams: Promise<{query: string}>}) {
+export default async function SeriesPage(props: {
+	searchParams: Promise<{ query: string }>
+}) {
 	const searchParams = await props.searchParams
 	const query = searchParams.query || ''
 
@@ -23,9 +24,7 @@ export default async function SeriesPage(props: {searchParams: Promise<{query: s
 				</p>
 			</div>
 
-			<Suspense fallback={<SearchSkeleton />}>
-				<Search placeholder="Digite sua série favorita" />
-			</Suspense>
+			<Search placeholder="Digite sua série favorita" />
 
 			<Suspense fallback={<MoviesListSkeleton />}>
 				<GetSeries query={query} />

@@ -1,6 +1,6 @@
 import { Props } from '@/types'
 import { DialogDescription, DialogTitle } from '@radix-ui/react-dialog'
-import { Link, Star } from 'lucide-react'
+import { ArrowUpRight, Star } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Dialog, DialogContent, DialogHeader } from './ui/dialog'
@@ -67,7 +67,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 							className="inline-flex items-center font-medium text-sm underline-offset-2 hover:underline"
 						>
 							Ver em IMDB
-							<Link className="ml-2 size-4" />
+							<ArrowUpRight className="ml-2 size-4" />
 						</a>
 					</div>
 				</div>
