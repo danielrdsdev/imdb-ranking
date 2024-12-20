@@ -26,7 +26,7 @@ export default async function SeriesPage(props: {
 
 			<Search placeholder="Digite sua série favorita" />
 
-			<Suspense fallback={<MoviesListSkeleton />}>
+			<Suspense fallback={<MoviesListSkeleton />} key={query}>
 				<GetSeries query={query} />
 			</Suspense>
 		</>

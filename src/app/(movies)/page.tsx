@@ -20,7 +20,7 @@ export default async function Home(props: {
 
 			<Search placeholder="Digite seu filme favorito" />
 
-			<Suspense fallback={<MoviesListSkeleton />}>
+			<Suspense fallback={<MoviesListSkeleton />} key={query}>
 				<GetMovies query={query} />
 			</Suspense>
 		</>
