@@ -1,4 +1,4 @@
-import { siteUrl } from '@/lib/env'
+import { siteUrl } from '@/utils/env'
 import { Github, Linkedin, type LucideIcon } from 'lucide-react'
 import type { Metadata } from 'next'
 

@@ -1,10 +1,16 @@
+import { GetSeries } from '@/components/pages/series/get-series'
 import { MovieListSkeleton } from '@/components/shared/movie-list-skeleton'
 import { PageTitle } from '@/components/shared/page-title'
 import { Search } from '@/components/shared/search'
 import { Suspense } from 'react'
-import { GetMovies } from '../../components/pages/movies/get-movies'
 
-export default async function Home(props: {
+export const metadata = {
+	title: 'Séries',
+	description:
+		'Lista das 100 melhores séries de todos os tempos ranqueados pelo IMDB.',
+}
+
+export default async function SeriesPage(props: {
 	searchParams: Promise<{ query: string }>
 }) {
 	const searchParams = await props.searchParams
@@ -13,14 +19,14 @@ export default async function Home(props: {
 	return (
 		<>
 			<PageTitle
-				title="Top 100 filmes"
-				description="Lista dos 100 melhores filmes de todos os tempo de acordo com o IMDB."
+				title="Top 100 séries"
+				description="Lista das 100 melhores séries de todos os tempos de acordo com o IMDB."
 			/>
 
-			<Search placeholder="Digite seu filme favorito" />
+			<Search placeholder="Digite sua série favorita" />
 
 			<Suspense fallback={<MovieListSkeleton />} key={query}>
-				<GetMovies query={query} />
+				<GetSeries query={query} />
 			</Suspense>
 		</>
 	)
