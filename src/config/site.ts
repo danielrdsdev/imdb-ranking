@@ -1,6 +1,6 @@
 import { siteUrl } from '@/lib/env'
-import { Github, Linkedin, LucideIcon } from 'lucide-react'
-import { Metadata } from 'next'
+import { Github, Linkedin, type LucideIcon } from 'lucide-react'
+import type { Metadata } from 'next'
 
 type NavLink = {
 	href: string
@@ -34,7 +34,7 @@ export const siteConfig: SiteConfig = {
 		openGraph: {
 			siteName,
 			title: siteName,
-			url: siteUrl
+			url: siteUrl,
 		},
 	},
 	navLinks: [

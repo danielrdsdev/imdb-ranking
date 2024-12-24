@@ -1,19 +1,11 @@
 import { api } from '@/lib/api'
-import { Props } from '@/types'
+import type { Props } from '@/types'
 
 type SeriesResponse = Props[]
 
-export const getSeries = async (
-	query: string
-): Promise<SeriesResponse | undefined> => {
+export const getSeries = async (): Promise<SeriesResponse | undefined> => {
 	try {
-		const data = await api
-			.get('series', {
-				searchParams: {
-					query,
-				},
-			})
-			.json<SeriesResponse>()
+		const data = await api.get('series').json<SeriesResponse>()
 
 		return data
 	} catch (error) {

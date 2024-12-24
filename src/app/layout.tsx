@@ -1,12 +1,12 @@
-import { BackToTop } from '@/components/back-to-top'
-import { Footer } from '@/components/footer'
-import { Header } from '@/components/header'
+import { BackToTop } from '@/components/layouts/back-to-top'
+import { Footer } from '@/components/layouts/footer'
+import { Header } from '@/components/layouts/header'
 import { Provider } from '@/components/provider'
 import { siteConfig } from '@/config/site'
 import { inter, titanOne } from '@/styles/font'
+import '@/styles/globals.css'
 import { ViewTransitions } from 'next-view-transitions'
 import NextTopLoader from 'nextjs-toploader'
-import '../styles/globals.css'
 
 export const metadata = siteConfig.metadata
 

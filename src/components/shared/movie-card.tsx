@@ -1,9 +1,9 @@
-import { Props } from '@/types'
+import { Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog'
+import type { Props } from '@/types'
 import { DialogDescription, DialogTitle } from '@radix-ui/react-dialog'
 import { ArrowUpRight, Star } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Dialog, DialogContent, DialogHeader } from './ui/dialog'
 
 type MovieCardProps = {
 	movie: Props
@@ -74,8 +74,9 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 			</div>
 
 			<Dialog open={isOpen} onOpenChange={setIsOpen}>
-				<DialogHeader className='sr-only'>
-					<DialogTitle>Imagem do filme
+				<DialogHeader className="sr-only">
+					<DialogTitle>
+						Imagem do filme
 						{movie.title}
 					</DialogTitle>
 					<DialogDescription>

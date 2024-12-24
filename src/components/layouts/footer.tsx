@@ -1,5 +1,5 @@
+import { Button } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
-import { Button } from './ui/button'
 
 export const Footer = () => {
 	return (

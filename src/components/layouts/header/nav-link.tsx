@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils'
 import { Link } from 'next-view-transitions'
 import { usePathname } from 'next/navigation'
-import { ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 
 export const NavLink = (props: ComponentProps<typeof Link>) => {
 	const pathname = usePathname()

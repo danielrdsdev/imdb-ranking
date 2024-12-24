@@ -1,10 +1,10 @@
 'use client'
 
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { SearchIcon } from 'lucide-react'
 import Form from 'next/form'
 import { usePathname } from 'next/navigation'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
 
 export const Search = ({ placeholder }: { placeholder: string }) => {
 	const pathname = usePathname()

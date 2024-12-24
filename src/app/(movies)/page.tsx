@@ -1,7 +1,8 @@
-import { MoviesListSkeleton } from '@/components/movies-list-skeleton'
-import { Search } from '@/components/search'
+import { MovieListSkeleton } from '@/components/shared/movie-list-skeleton'
+import { PageTitle } from '@/components/shared/page-title'
+import { Search } from '@/components/shared/search'
 import { Suspense } from 'react'
-import { GetMovies } from './_components/get-movies'
+import { GetMovies } from '../../components/pages/movies/get-movies'
 
 export default async function Home(props: {
 	searchParams: Promise<{ query: string }>
@@ -11,16 +12,14 @@ export default async function Home(props: {
 
 	return (
 		<>
-			<div className="space-y-2">
-				<h1 className="font-semibold text-3xl tracking-tight">Top 100</h1>
-				<p className="text-muted-foreground text-sm">
-					Lista dos 100 melhores filmes de todos os tempos ranqueados pelo IMDB.
-				</p>
-			</div>
+			<PageTitle
+				title="Top 100 filmes"
+				description="Lista dos 100 melhores filmes de todos os tempo de acordo com o IMDB."
+			/>
 
 			<Search placeholder="Digite seu filme favorito" />
 
-			<Suspense fallback={<MoviesListSkeleton />} key={query}>
+			<Suspense fallback={<MovieListSkeleton />} key={query}>
 				<GetMovies query={query} />
 			</Suspense>
 		</>

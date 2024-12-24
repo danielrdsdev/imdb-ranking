@@ -1,7 +1,8 @@
-import { MoviesListSkeleton } from '@/components/movies-list-skeleton'
-import { Search } from '@/components/search'
+import { MovieListSkeleton } from '@/components/shared/movie-list-skeleton'
+import { PageTitle } from '@/components/shared/page-title'
+import { Search } from '@/components/shared/search'
 import { Suspense } from 'react'
-import { GetSeries } from './_components/get-series'
+import { GetSeries } from '../../components/pages/series/get-series'
 
 export const metadata = {
 	title: 'Séries',
@@ -17,16 +18,14 @@ export default async function SeriesPage(props: {
 
 	return (
 		<>
-			<div className="space-y-2">
-				<h1 className="font-semibold text-3xl tracking-tight">Top 100</h1>
-				<p className="text-muted-foreground text-sm">
-					Lista das 100 melhores séries de todos os tempos ranqueados pelo IMDB.
-				</p>
-			</div>
+			<PageTitle
+				title="Top 100 séries"
+				description="Lista das 100 melhores séries de todos os tempos de acordo com o IMDB."
+			/>
 
 			<Search placeholder="Digite sua série favorita" />
 
-			<Suspense fallback={<MoviesListSkeleton />} key={query}>
+			<Suspense fallback={<MovieListSkeleton />} key={query}>
 				<GetSeries query={query} />
 			</Suspense>
 		</>

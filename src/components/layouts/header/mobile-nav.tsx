@@ -1,8 +1,12 @@
+import { Button } from '@/components/ui/button'
+import {
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from '@/components/ui/popover'
 import { siteConfig } from '@/config/site'
 import { PopoverClose } from '@radix-ui/react-popover'
 import { Menu } from 'lucide-react'
-import { Button } from '../ui/button'
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import { NavLink } from './nav-link'
 
 export const MobileNav = () => {
