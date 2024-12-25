@@ -5,13 +5,14 @@ export const useInfiniteScroll = (dataLength: number) => {
 	const [isLoading, setIsLoading] = useState(false)
 
 	const handleScroll = useCallback(() => {
-		if (
+		const hasReachedBottom =
 			window.innerHeight + document.documentElement.scrollTop <
-				document.documentElement.offsetHeight - 500 ||
-			isLoading ||
-			loadingMore >= dataLength
-		)
+			document.documentElement.offsetHeight - 500
+
+		if (hasReachedBottom || isLoading || loadingMore >= dataLength) {
 			return
+		}
+
 		setIsLoading(true)
 		setTimeout(() => {
 			setLoadingMore((prev) => prev + 5)
@@ -24,5 +25,8 @@ export const useInfiniteScroll = (dataLength: number) => {
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [handleScroll])
 
-	return { loadingMore, isLoading }
+	return {
+		loadingMore,
+		isLoading,
+	}
 }

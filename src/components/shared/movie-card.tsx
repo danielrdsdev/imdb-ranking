@@ -75,10 +75,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 
 			<Dialog open={isOpen} onOpenChange={setIsOpen}>
 				<DialogHeader className="sr-only">
-					<DialogTitle>
-						Imagem do filme
-						{movie.title}
-					</DialogTitle>
+					<DialogTitle>Imagem do filme {movie.title}</DialogTitle>
 					<DialogDescription>
 						Imagem em alta resolução do filme {movie.title}
 					</DialogDescription>

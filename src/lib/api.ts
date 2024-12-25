@@ -1,5 +1,5 @@
+import { apiHost, apiKey, apiUrl } from '@/utils/env'
 import ky from 'ky'
-import { apiHost, apiKey, apiUrl } from '../utils/env'
 
 export const api = ky.create({
 	prefixUrl: apiUrl,
