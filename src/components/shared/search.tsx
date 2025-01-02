@@ -1,9 +1,10 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import Form from 'next/form'
 import { usePathname } from 'next/navigation'
+
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 export const Search = ({ placeholder }: { placeholder: string }) => {
 	const pathname = usePathname()

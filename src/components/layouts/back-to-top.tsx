@@ -1,9 +1,10 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUp } from 'lucide-react'
 import { useCallback, useEffect, useState } from 'react'
+
+import { Button } from '@/components/ui/button'
 
 export const BackToTop = () => {
 	const [show, setShow] = useState(false)
@@ -25,7 +26,7 @@ export const BackToTop = () => {
 		<AnimatePresence>
 			{show && (
 				<motion.div
-					className="fixed bottom-4 right-4 z-20"
+					className="right-4 bottom-4 z-20 fixed"
 					initial={{ opacity: 0, right: -10 }}
 					animate={{ opacity: 1, right: 16 }}
 					exit={{ opacity: 0, right: -10 }}

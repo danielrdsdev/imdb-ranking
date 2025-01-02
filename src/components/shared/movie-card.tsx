@@ -1,9 +1,16 @@
-import { Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog'
-import type { Props } from '@/types'
-import { DialogDescription, DialogTitle } from '@radix-ui/react-dialog'
 import { ArrowUpRight, Star } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
+
+import type { Props } from '@/types'
+
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+} from '@/components/ui/dialog'
 
 type MovieCardProps = {
 	movie: Props

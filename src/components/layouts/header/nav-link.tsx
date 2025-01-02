@@ -1,9 +1,10 @@
 'use client'
 
-import { cn } from '@/lib/utils'
 import { Link } from 'next-view-transitions'
 import { usePathname } from 'next/navigation'
 import type { ComponentProps } from 'react'
+
+import { cn } from '@/lib/utils'
 
 export const NavLink = (props: ComponentProps<typeof Link>) => {
 	const pathname = usePathname()

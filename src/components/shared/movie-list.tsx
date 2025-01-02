@@ -1,8 +1,11 @@
 'use client'
-import { MovieCard } from '@/components/shared/movie-card'
+
+import { Loader } from 'lucide-react'
+
 import { useInfiniteScroll } from '@/hooks/use-infinite-scroll'
 import type { Props } from '@/types'
-import { Loader } from 'lucide-react'
+
+import { MovieCard } from '@/components/shared/movie-card'
 
 type MovieListProps = {
 	query: string

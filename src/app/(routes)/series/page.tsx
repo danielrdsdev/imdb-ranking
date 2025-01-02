@@ -1,8 +1,9 @@
+import { Suspense } from 'react'
+
 import { GetSeries } from '@/components/pages/series/get-series'
 import { MovieListSkeleton } from '@/components/shared/movie-list-skeleton'
 import { PageTitle } from '@/components/shared/page-title'
 import { Search } from '@/components/shared/search'
-import { Suspense } from 'react'
 
 export const metadata = {
 	title: 'Séries',

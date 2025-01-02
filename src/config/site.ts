@@ -1,6 +1,7 @@
-import { siteUrl } from '@/utils/env'
 import { Github, Linkedin, type LucideIcon } from 'lucide-react'
 import type { Metadata } from 'next'
+
+import { siteUrl } from '@/utils/env'
 
 type NavLink = {
 	href: string

@@ -1,8 +1,9 @@
+import { Suspense } from 'react'
+
 import { GetMovies } from '@/components/pages/movies/get-movies'
 import { MovieListSkeleton } from '@/components/shared/movie-list-skeleton'
 import { PageTitle } from '@/components/shared/page-title'
 import { Search } from '@/components/shared/search'
-import { Suspense } from 'react'
 
 export default async function Home(props: {
 	searchParams: Promise<{ query: string }>

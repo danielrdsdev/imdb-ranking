@@ -1,6 +1,8 @@
-import { Separator } from '@/components/ui/separator'
-import { siteConfig } from '@/config/site'
 import { Link } from 'next-view-transitions'
+
+import { siteConfig } from '@/config/site'
+
+import { Separator } from '@/components/ui/separator'
 import { MobileNav } from './mobile-nav'
 import { ModeToggle } from './mode-toggle'
 import { NavLink } from './nav-link'
